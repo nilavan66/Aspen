@@ -1,17 +1,14 @@
 package com.example.aspen
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.aspen.Icon.Icon
-import com.example.aspen.Icon.IconAdapter
 import com.example.aspen.Popular.Popular
 import com.example.aspen.Popular.PopularAdapter
 import com.example.aspen.Recommended.Recom
 import com.example.aspen.Recommended.RecomAdapter
-import java.util.ArrayList
 
 class Dashboard : AppCompatActivity() {
 
@@ -67,9 +64,27 @@ class Dashboard : AppCompatActivity() {
     }
 
     private fun onPopularItemClick(popularItem: Popular) {
+        /*
         if (popularItem.title == "Coeurdes Alpes") {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+        */
+
+        val intent = when (popularItem.title) {
+
+            "Coeurdes Alpes" -> Intent(this, MainActivity::class.java)
+
+            "Alley Palace" -> Intent(this, MainActivity::class.java)
+
+            "Colorando" -> Intent(this, MainActivity::class.java)
+
+            else -> null
+        }
+
+        intent?.let {
+            startActivity(it)
+        }
+
     }
 }

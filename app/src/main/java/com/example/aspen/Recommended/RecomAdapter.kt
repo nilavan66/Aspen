@@ -5,9 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.aspen.Popular.PopularAdapter
 import com.example.aspen.R
-import com.google.android.material.card.MaterialCardView
 import com.google.android.material.textview.MaterialTextView
 
 class RecomAdapter (private val recomList: List<Recom> ):
