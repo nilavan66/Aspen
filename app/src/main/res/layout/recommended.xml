@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    app:strokeWidth="0dp"
+    android:layout_margin="8dp"
     app:cardCornerRadius="8dp"
-    android:layout_margin="8dp">
+    app:strokeWidth="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
@@ -20,7 +20,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/dn"
             android:layout_width="wrap_content"
@@ -29,7 +28,6 @@
             android:background="@drawable/dn"
             android:fontFamily="@font/montserrat_medium"
             android:paddingHorizontal="4dp"
-
             android:paddingVertical="2dp"
             android:text="4N/5D"
             android:textColor="#fff"
@@ -79,9 +77,8 @@
                 app:layout_constraintStart_toEndOf="@id/icon"
                 app:layout_constraintTop_toTopOf="parent" />
 
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </com.google.android.material.card.MaterialCardView>

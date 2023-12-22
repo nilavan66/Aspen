@@ -1,7 +1,9 @@
 package com.example.aspen
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.aspen.Icon.Icon
@@ -31,5 +33,16 @@ class MainActivity : AppCompatActivity() {
         iconAdapter = IconAdapter(iconArrayList)
         iconRecycle.adapter = iconAdapter
 
+    }
+
+    fun back(view: View) {
+        val intent = Intent(this,Dashboard::class.java)
+        startActivity(intent)
+        super.finish()
+    }
+
+    override fun finish() {
+        startActivity(Intent(this, Dashboard::class.java))
+        super.finish()
     }
 }

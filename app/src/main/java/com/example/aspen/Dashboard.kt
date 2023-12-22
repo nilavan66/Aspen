@@ -18,6 +18,7 @@ class Dashboard : AppCompatActivity() {
 
     private lateinit var popularAdapter: PopularAdapter
 
+
     private lateinit var recomRecycle: RecyclerView
 
     private lateinit var recomArrayList: ArrayList<Recom>
@@ -42,11 +43,11 @@ class Dashboard : AppCompatActivity() {
         popularArrayList.add(Popular(R.drawable.img2, "Coeurdes Alpes", "3.5", ""))
         popularArrayList.add(Popular(R.drawable.img3, "Colorando", "4.0", "liked"))
 
-        // popularAdapter = PopularAdapter(popularArrayList)
         popularAdapter = PopularAdapter(popularArrayList) { item ->
             onPopularItemClick(item)
         }
         popularRecycle.adapter = popularAdapter
+
 
         //===================
 
@@ -64,12 +65,6 @@ class Dashboard : AppCompatActivity() {
     }
 
     private fun onPopularItemClick(popularItem: Popular) {
-        /*
-        if (popularItem.title == "Coeurdes Alpes") {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-        */
 
         val intent = when (popularItem.title) {
 
@@ -84,7 +79,13 @@ class Dashboard : AppCompatActivity() {
 
         intent?.let {
             startActivity(it)
+            finish()
         }
 
     }
+
+    override fun finish() {
+        super.finish()
+    }
+
 }
