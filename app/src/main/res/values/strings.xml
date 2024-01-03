@@ -1,6 +1,29 @@
 <resources>
     <string name="app_name">Aspen</string>
     <string name="content">Aspen is as close as one can get to a storybook alpine town in America.
-        The choose-your-own-adventure possibilities—skiing, hiking, dining shopping and,
-        The choose-your-own-adventure possibilities—skiing, hiking, dining shopping </string>
+        The choose-your-own-adventure possibilities—skiing, hiking, dining shopping and… </string>
+
+    <string name="explore">Explore</string>
+    <string name="aspen">Aspen</string>
+    <string name="location">Aspen, USA</string>
+    <string name="find_things_to_do">Find things to do</string>
+    <string name="popular">Popular</string>
+    <string name="see_all">See all</string>
+    <string name="recommended">Recommended</string>
+    <string name="book_now">Book Now</string>
+
+    <string name="location_name">Coeurdes Alpes</string>
+    <string name="show_map">Show map</string>
+    <string name="reviews">4.5 (335 Reviews)</string>
+    <string name="read_more">Read More</string>
+    <string name="facilities">Facilities</string>
+    <string name="price">Price</string>
+    <string name="prive_value">$199</string>
+    <string name="location_title">Location</string>
+    <string name="hotel">Hotel</string>
+    <string name="food">Food</string>
+    <string name="adventure">Adventure</string>
+    <string name="price_value">$199</string>
+    <string name="night_day">4N/5D</string>
+
 </resources>
