@@ -25,5 +25,7 @@
     <string name="adventure">Adventure</string>
     <string name="price_value">$199</string>
     <string name="night_day">4N/5D</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -79,13 +79,9 @@ class Dashboard : AppCompatActivity() {
 
         intent?.let {
             startActivity(it)
-            finish()
+            super.finish()
         }
 
-    }
-
-    override fun finish() {
-        super.finish()
     }
 
 }
