@@ -5,10 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.aspen.Popular.Popular
 import com.example.aspen.R
 import com.google.android.material.textview.MaterialTextView
 
-class RecomAdapter (private val recomList: List<Recom> ):
+class RecomAdapter (private var recomList: List<Recom> ):
 RecyclerView.Adapter<RecomAdapter.ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.recommended, parent, false)
@@ -33,5 +34,9 @@ RecyclerView.Adapter<RecomAdapter.ViewHolder>(){
         val dn: MaterialTextView = itemView.findViewById(R.id.dn)
     }
 
+    fun setData(newList: List<Recom>) {
+        recomList = newList
+        notifyDataSetChanged()
+    }
 
 }

@@ -8,9 +8,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.aspen.R
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.textview.MaterialTextView
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class PopularAdapter(
-    private val popularList: List<Popular>,
+
+class PopularAdapter (
+    private var popularList: List<Popular>,
     private val onItemClick: (Popular) -> Unit
 ) :
     RecyclerView.Adapter<PopularAdapter.ViewHolder>() {
@@ -47,5 +50,10 @@ class PopularAdapter(
         val title: MaterialTextView = itemView.findViewById(R.id.place_name)
         val rating: MaterialTextView = itemView.findViewById(R.id.rating)
         val like: MaterialCardView = itemView.findViewById(R.id.like)
+    }
+
+    fun setData(newList: List<Popular>) {
+        popularList = newList
+        notifyDataSetChanged()
     }
 }

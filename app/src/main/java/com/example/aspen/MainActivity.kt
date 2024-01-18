@@ -3,12 +3,13 @@ package com.example.aspen
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.aspen.Icon.Icon
 import com.example.aspen.Icon.IconAdapter
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.ArrayList
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun back(view: View) {
+    fun back() {
         val intent = Intent(this,Dashboard::class.java)
         startActivity(intent)
         super.finish()

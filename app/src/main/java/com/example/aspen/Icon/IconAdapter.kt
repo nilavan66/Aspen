@@ -7,8 +7,11 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.aspen.R
 import com.google.android.material.textview.MaterialTextView
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class IconAdapter(private val iconList: List<Icon>) :
+
+class IconAdapter (private val iconList: List<Icon>) :
     RecyclerView.Adapter<IconAdapter.ViewHolder>() {
 
 
@@ -21,7 +24,6 @@ class IconAdapter(private val iconList: List<Icon>) :
         val icon = iconList[position]
         holder.iconImage.setImageResource(icon.icon)
         holder.iconText.text = icon.title
-
 
     }
 
