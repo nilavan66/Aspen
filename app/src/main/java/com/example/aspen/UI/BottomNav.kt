@@ -12,10 +12,10 @@ class BottomNav : AppCompatActivity() {
 
     private lateinit var btmnav: BottomNavigationView
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bottom_nav)
-
 
         btmnav = findViewById(R.id.bottnav)
         val dashboardFragment = DashboardFragment()
@@ -32,7 +32,6 @@ class BottomNav : AppCompatActivity() {
             }
             true
         }
-
     }
 
     private fun setCurrentFragment(dashboardFragment: Fragment) =

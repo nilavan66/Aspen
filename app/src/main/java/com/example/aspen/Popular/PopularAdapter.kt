@@ -8,8 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.aspen.R
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.textview.MaterialTextView
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
 
 
 class PopularAdapter (
@@ -24,6 +22,18 @@ class PopularAdapter (
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val popular = popularList[position]
+
+        with(holder) {
+            img.setImageResource(popular.img)
+            title.text = popular.title
+            rating.text = popular.rating
+            itemView.setOnClickListener {
+                onItemClick(popular)
+            }
+            like.visibility = if (popular.like == "liked") View.VISIBLE else View.GONE
+        }
+
+        /*
         holder.img.setImageResource(popular.img)
         holder.title.text = popular.title
         holder.rating.text = popular.rating
@@ -32,14 +42,9 @@ class PopularAdapter (
             onItemClick(popular)
         }
 
-        if (popular.like == "liked") {
-            holder.like.visibility = View.VISIBLE
-        } else {
-            holder.like.visibility = View.GONE
-        }
-
+        holder.like.visibility = if (popular.like == "liked") View.VISIBLE else View.GONE
+*/
     }
-
     override fun getItemCount(): Int {
         return popularList.size
     }
@@ -50,10 +55,12 @@ class PopularAdapter (
         val title: MaterialTextView = itemView.findViewById(R.id.place_name)
         val rating: MaterialTextView = itemView.findViewById(R.id.rating)
         val like: MaterialCardView = itemView.findViewById(R.id.like)
+
     }
 
     fun setData(newList: List<Popular>) {
         popularList = newList
         notifyDataSetChanged()
     }
+
 }
