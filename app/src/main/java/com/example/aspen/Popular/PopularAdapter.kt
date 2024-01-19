@@ -33,17 +33,6 @@ class PopularAdapter (
             like.visibility = if (popular.like == "liked") View.VISIBLE else View.GONE
         }
 
-        /*
-        holder.img.setImageResource(popular.img)
-        holder.title.text = popular.title
-        holder.rating.text = popular.rating
-
-        holder.itemView.setOnClickListener {
-            onItemClick(popular)
-        }
-
-        holder.like.visibility = if (popular.like == "liked") View.VISIBLE else View.GONE
-*/
     }
     override fun getItemCount(): Int {
         return popularList.size
