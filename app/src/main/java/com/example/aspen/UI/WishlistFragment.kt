@@ -9,7 +9,9 @@ import androidx.activity.addCallback
 import androidx.fragment.app.FragmentTransaction
 import com.example.aspen.R
 
-class ProfileFragment : Fragment() {
+
+class WishlistFragment : Fragment() {
+
 
 
 
@@ -17,12 +19,9 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_profile, container, false)
-
-
-        return view
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_wishlist, container, false)
     }
-
 
 
 

@@ -5,9 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.aspen.Popular.Popular
 import com.example.aspen.R
-import javax.inject.Inject
 
-class PopularViewModel @Inject constructor() : ViewModel() {
+
+class PopularViewModel : ViewModel() {
+
     private val _popularList = MutableLiveData<List<Popular>>()
     val popularList: LiveData<List<Popular>> get() = _popularList
 

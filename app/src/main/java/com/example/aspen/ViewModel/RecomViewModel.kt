@@ -5,9 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.aspen.R
 import com.example.aspen.Recommended.Recom
-import javax.inject.Inject
 
-class RecomViewModel @Inject constructor() : ViewModel() {
+
+class RecomViewModel : ViewModel() {
 
     private val _recomList = MutableLiveData<List<Recom>>()
     val recomList: LiveData<List<Recom>> get() = _recomList

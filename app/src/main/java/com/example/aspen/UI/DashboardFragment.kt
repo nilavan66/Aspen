@@ -16,19 +16,19 @@ import com.example.aspen.Recommended.Recom
 import com.example.aspen.Recommended.RecomAdapter
 import com.example.aspen.ViewModel.PopularViewModel
 import com.example.aspen.ViewModel.RecomViewModel
-import dagger.hilt.android.AndroidEntryPoint
+import com.example.aspen.databinding.FragmentDashboardBinding
+
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-@AndroidEntryPoint
+
 class DashboardFragment : Fragment() {
+
+    private lateinit var binding: FragmentDashboardBinding
 
     private val popularViewModel: PopularViewModel by viewModel()
     private val recomViewModel: RecomViewModel by viewModel()
 
-    private lateinit var popularRecycle: RecyclerView
     private lateinit var popularAdapter: PopularAdapter
-
-    private lateinit var recomRecycle: RecyclerView
     private lateinit var recomAdapter: RecomAdapter
 
     override fun onCreateView(
@@ -36,13 +36,11 @@ class DashboardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val view = inflater.inflate(R.layout.fragment_dashboard, container, false)
+        binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        val view = binding.root
 
-        popularRecycle = view.findViewById(R.id.popular)
-        recomRecycle = view.findViewById(R.id.recommended)
-
-        setupRecyclerView(popularRecycle)
-        setupRecyclerView(recomRecycle)
+        setupRecyclerView(binding.popular)
+        setupRecyclerView(binding.recommended)
 
         setupPopularRecyclerView()
         setupRecomRecyclerView()
@@ -58,7 +56,9 @@ class DashboardFragment : Fragment() {
         popularAdapter = PopularAdapter(emptyList()) { item ->
             onPopularItemClick(item)
         }
-        popularRecycle.adapter = popularAdapter
+
+        binding.popular.adapter = popularAdapter
+
 
         val popularListObserver = Observer<List<Popular>> { popularList ->
             popularAdapter.setData(popularList)
@@ -72,7 +72,7 @@ class DashboardFragment : Fragment() {
     private fun setupRecomRecyclerView() {
         recomAdapter = RecomAdapter(emptyList())
 
-        recomRecycle.adapter = recomAdapter
+        binding.recommended.adapter = recomAdapter
 
         val recomListObserver = Observer<List<Recom>> { recomList ->
             recomAdapter.setData(recomList)
